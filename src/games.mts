@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs'
 import PQueue from 'p-queue'
 
 type GameInfo = {
@@ -197,5 +198,20 @@ export class YaoyaoGame {
             text = text.replace(new RegExp(dnames[0], 'g'), dnames[1])
         })
         return text
+    }
+
+
+
+}
+
+export class GameCollect {
+    static async start(username: string, password: string, path: string) {
+        const sessionId = await YaoyaoGame.login(username, password)
+        if (!await YaoyaoGame.checkLogin(sessionId))
+            throw new Error('sessionId 校验失败')
+        const client = new YaoyaoGame(sessionId)
+        const idList = await client.getAllIdList()
+        const infoList = await client.getAllInfo(idList)
+        writeFileSync(path, JSON.stringify(infoList))
     }
 }

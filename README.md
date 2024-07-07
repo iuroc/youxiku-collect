@@ -4,12 +4,14 @@
 
 ## 采集步骤
 
-1. 从 `games.mts` 中导入 `YaoyaoGame` 类
-2. 调用 `YaoyaoGame.login` 方法，传入账号密码，获得登录后的 `sessionId`
-3. 可以使用 `YaoyaoGame.checkLogin` 校验 `sessionId` 是否已经登录可用
-4. 实例化 `YaoyaoGame` 类，传入 `sessionId`，对象命名为 `client`
-5. 调用 `client.getAllIdList` 获取所有的游戏 ID
-6. 调用 `client.getAllInfo` 获取所有的游戏信息和下载地址
+```typescript
+import { GameCollect } from "./games.mjs";
+
+const username = "iuroc";
+const password = "12345678";
+
+GameCollect.start(username, password, "data/infoList.json");
+```
 
 ## 采集结果
 
