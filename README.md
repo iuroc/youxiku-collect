@@ -4,14 +4,9 @@
 
 ## 采集步骤
 
-```typescript
-import { GameCollect } from "./games.mjs";
-
-const username = "iuroc";
-const password = "12345678";
-
-GameCollect.start(username, password, "data/infoList.json");
-```
+1. 编辑 `src/main.mts` 文件，填入账号和密码
+2. 执行 `tsc -w` 编译 TypeScript 代码
+3. 执行 `node dist/main.mjs` 开始采集
 
 ## 采集结果
 
