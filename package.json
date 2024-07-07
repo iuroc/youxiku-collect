@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@types/html-to-text": "^9.0.4",
+    "@types/node": "^20.14.10"
+  },
+  "dependencies": {
+    "html-to-text": "^9.0.5",
+    "p-queue": "^8.0.1"
+  }
+}
